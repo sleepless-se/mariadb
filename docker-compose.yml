@@ -1,0 +1,24 @@
+
+version: '3'
+services:
+
+  db:
+    container_name: 'db'
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_HOST: "db"
+      MYSQL_USER: 'root'
+      MYSQL_ROOT_PASSWORD: 'root'
+    #  MYSQL_DATABASE: maria_db
+      TZ: 'Asia/Tokyo'
+    volumes:
+     - ./db/mycustom.cnf:/etc/mysql/conf.d/custom.cnf
+     - ./db:/var/lib/mysql:Z
+    ports:
+     - 3306:3306
+    networks:
+     - my_network
+networks:
+  my_network:
+    external: true
