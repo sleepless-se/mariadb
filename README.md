@@ -18,5 +18,4 @@ vim docker-compose.yml
 docker-compose up
 ```
 
-### Search root password
-GENERATED ROOT PASSWORD: 
+**Search root password by `GENERATED ROOT PASSWORD`**
